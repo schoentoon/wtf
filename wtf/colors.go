@@ -282,6 +282,13 @@ func ColorFor(label string) tcell.Color {
 	return tcell.GetColor(label)
 }
 
+
+// StripColorTags removes tcell color tags from a given string
+func StripColorTags(input string) string {
+	openColorRegex := regexp.MustCompile(`\[.*?\]`)
+	return openColorRegex.ReplaceAllString(input, "")
+}
+
 /* -------------------- Unexported Functions -------------------- */
 
 func replaceWithHexColorString(substring string) string {

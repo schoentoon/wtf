@@ -5,7 +5,6 @@ import (
 
 	"github.com/olebedev/config"
 	"github.com/wtfutil/wtf/app"
-	"github.com/wtfutil/wtf/utils"
 )
 
 // Display displays the output of the --help argument

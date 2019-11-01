@@ -7,6 +7,7 @@ import (
 	"github.com/rivo/tview"
 	"github.com/wtfutil/wtf/cfg"
 	"github.com/wtfutil/wtf/utils"
+	"github.com/wtfutil/wtf/help"
 )
 
 type Base struct {
@@ -60,7 +61,7 @@ func (base *Base) CommonSettings() *cfg.Common {
 }
 
 func (base *Base) ConfigText() string {
-	return utils.HelpFromInterface(cfg.Common{})
+	return help.HelpFromInterface(cfg.Common{})
 }
 
 func (base *Base) ContextualTitle(defaultStr string) string {

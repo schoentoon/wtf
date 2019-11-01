@@ -1,4 +1,4 @@
-package utils
+package help
 
 import (
 	"reflect"
@@ -25,7 +25,7 @@ func HelpFromInterface(item interface{}) string {
 		}
 
 		if field.Name == "common" {
-			result += HelpFromInterface(cfg.Common{})
+			result += HelpFromInterface(cfg.Common{}) // TODO: Move this file into the /help directory
 		}
 
 		switch kind {
@@ -39,11 +39,6 @@ func HelpFromInterface(item interface{}) string {
 	return result
 }
 
-// StripColorTags removes tcell color tags from a given string
-func StripColorTags(input string) string {
-	openColorRegex := regexp.MustCompile(`\[.*?\]`)
-	return openColorRegex.ReplaceAllString(input, "")
-}
 
 /* -------------------- Unexported Functions -------------------- */
 
