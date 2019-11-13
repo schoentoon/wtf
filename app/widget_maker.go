@@ -24,6 +24,7 @@ import (
 	"github.com/wtfutil/wtf/modules/gerrit"
 	"github.com/wtfutil/wtf/modules/git"
 	"github.com/wtfutil/wtf/modules/github"
+	"github.com/wtfutil/wtf/modules/github-notifications"
 	"github.com/wtfutil/wtf/modules/gitlab"
 	"github.com/wtfutil/wtf/modules/gitter"
 	"github.com/wtfutil/wtf/modules/googleanalytics"
@@ -146,6 +147,9 @@ func MakeWidget(
 	case "github":
 		settings := github.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = github.NewWidget(app, pages, settings)
+	case "github-notifications":
+		settings := githubnotifications.NewSettingsFromYAML(moduleName, moduleConfig, config)
+		widget = githubnotifications.NewWidget(app, pages, settings)
 	case "gitlab":
 		settings := gitlab.NewSettingsFromYAML(moduleName, moduleConfig, config)
 		widget = gitlab.NewWidget(app, pages, settings)
