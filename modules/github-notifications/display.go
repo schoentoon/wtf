@@ -22,8 +22,9 @@ func (widget *Widget) content() (string, string, bool) {
 
 	var out string
 	for idx, notification := range widget.Notifications {
-		out += fmt.Sprintf(` ["%d"]%s %s in %s[""]`,
+		out += fmt.Sprintf(` ["%d"][%s]%s %s in %s[white][""]`,
 			idx,
+			widget.RowColor(idx),
 			notification.GetSubject().GetType(),
 			notification.GetSubject().GetTitle(),
 			notification.GetRepository().GetFullName(),

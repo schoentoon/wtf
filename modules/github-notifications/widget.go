@@ -16,7 +16,7 @@ import (
 // Widget define wtf widget to register widget later
 type Widget struct {
 	view.KeyboardWidget
-	view.TextWidget
+	view.ScrollableWidget
 
 	oauthClient   *http.Client
 	Client        *github.Client
@@ -30,8 +30,8 @@ type Widget struct {
 // NewWidget creates a new instance of the widget
 func NewWidget(app *tview.Application, pages *tview.Pages, settings *Settings) *Widget {
 	widget := Widget{
-		KeyboardWidget: view.NewKeyboardWidget(app, pages, settings.common),
-		TextWidget:     view.NewTextWidget(app, settings.common),
+		KeyboardWidget:   view.NewKeyboardWidget(app, pages, settings.common),
+		ScrollableWidget: view.NewScrollableWidget(app, settings.common),
 
 		settings: settings,
 	}
